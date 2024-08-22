@@ -3,91 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/9d8a830eca.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./css/main.css">
     <link rel="icon" type="image/x-icon" href="./images/logo.jpg">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./js/main.js"></script>
+    <script src="./js/modal.js"></script>
     <title>Divine Path Logistics</title>
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg bg-body-tertiary">
-            <div class="container-fluid">
-              <a class="navbar-brand" href="#">
-                <img src="./images/logo.jpg" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
-                Divine Path Logistics</a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                  <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="./index.html">Home</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">About</a>
-                  </li>
-                  <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      Users
-                    </a>
-                    <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href="./login.html">Sign In</a></li>
-                      <li><a class="dropdown-item" href="./registration.html">Registration</a></li>
-                      <li><hr class="dropdown-divider"></li>
-                      <li><a class="dropdown-item" href="./administration.html">Administration</a></li>
-                    </ul>
-                  </li>
-                </ul>
-                <form class="d-flex" role="search">
-                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                  <button class="btn btn-outline-success" type="submit">Search</button>
-                </form>
-              </div>
+        <div class="topnav">
+            <a href="#home"><i class="fa fa-fw fa-search"></i> About</a>
+            <a href="#about"><i class="fa fa-fw fa-envelope"></i> Support</a>
+            <div class="dropdown">
+                <button class="dropbtn" onclick="myFunction()">
+                    <i class="fa-solid fa-user"></i> Clients
+                </button>
+                <div class="dropdown-content" id="myDropdown">
+                    <a href="#">Sign In</a>
+                    <a href="#">Register</a>
+                </div>
             </div>
-          </nav>
+            <a href="#clients" class="split"><i class="fa fa-fw fa-home"></i> Home</a>
+        </div>
     </header>
     <main>
-        <h1>Welcome!</h1>
-        <div class="card" style="width: 18rem;">
-            <img src="./images/courier.jpg" class="card-img-top" alt="Courier">
-            <div class="card-body">
-              <h5 class="card-title">Divine Path Logistics</h5>
-              <p class="card-text">Welcome to Divine Path Logistics! This is a courier service, where we pride ourselves on fast, and safe deliveries meeting the needs of our clients.</p>
-              <a href="./login.html" class="btn btn-primary">Get Started!</a>
+        <center>
+            <div class="card">
+                <img src="./images/logo.jpg" alt="Logo" style="width:100%">
+                <h2>Divine Path Logistics</h2>
+                <p class="price">Courier Service</p>
+                <p>Welcome to Divine Path Logistics, a courier service. Where we pride ourselves on fast deliveries and meeting the needs of our clients.</p>
+                <button onclick="document.getElementById('id01').style.display='block'">Login</button>
+                <div id="id01" class="modal">
+                <span onclick="document.getElementById('id01').style.display='none'"class="close" title="Close Modal">&times;</span>
+            <form class="modal-content animate" action="/action_page.php">
+                <div class="imgcontainer">
+                <img src="./images/img_avatar2.png" alt="Avatar" class="avatar">
             </div>
-        </div>
+            <div class="container">
+                <label for="uname"><b>Username</b></label>
+                <input type="text" placeholder="Enter Username" name="uname" required>
+
+                <label for="psw"><b>Password</b></label>
+                <input type="password" placeholder="Enter Password" name="psw" required>
+                <button type="submit">Login</button>
+                <label>
+                    <input type="checkbox" checked="checked" name="remember"> Remember me
+                </label>
+            </div>
+            <div class="container" style="background-color:#f1f1f1">
+                <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+                <span class="psw">Forgot <a href="#">password?</a></span>
+            </div>
+            </form>
+            </div>
+            </div>
+        </center>
     </main>
     <footer>
-        <nav class="navbar navbar-expand-lg bg-body-tertiary">
-            <div class="container-fluid">
-              <a class="navbar-brand" href="#">&copy; Divine Path Logistics</a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarScroll">
-                <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
-                  <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Pricing</a>
-                  </li>
-                  <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      Users
-                    </a>
-                    <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href="#">Sign In</a></li>
-                      <li><a class="dropdown-item" href="#">Registration</a></li>
-                      <li><hr class="dropdown-divider"></li>
-                      <li><a class="dropdown-item" href="#">Administration</a></li>
-                    </ul>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </nav>
+        <div class="bottomnav">
+            <a href="#"><i class="fa-solid fa-copyright"></i> Divine Path Logistics 2024</a>
+            <a href="#pricing" class="split"><i class="fa-solid fa-wallet"></i> Pricing</a>
+            <a href="#delivery" class="split"><i class="fa-solid fa-business-time"></i> Deliveries</a>
+        </div>
     </footer>
 </body>
 </html>
